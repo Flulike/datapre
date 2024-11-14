@@ -3,7 +3,7 @@ import xml.etree.ElementTree as ET
 
 # 类别名称列表
 classes = []
-with open("D:\program\dataset\carclassyolo\obj.names") as f:
+with open("obj.names") as f:
     classes = [line.strip() for line in f.readlines()]
 
 def convert_yolo_to_voc(yolo_dir, images_dir, voc_dir):
