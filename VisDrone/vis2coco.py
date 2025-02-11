@@ -3,9 +3,9 @@ import json
 from PIL import Image 
 
 # VisDrone 数据集路径
-visdrone_anno_dir = "D:/program/dataset/VisDrone/VisDrone2019-DET-test/annotations/"
-image_dir = "D:/program/dataset/VisDrone/VisDrone2019-DET-test/images/"
-output_json = "test.json"
+visdrone_anno_dir = "D:/program/dataset/VisDrone/VisDrone2019-DET-train/annotations/"
+image_dir = "D:/program/dataset/VisDrone/VisDrone2019-DET-train/images/"
+output_json = "train.json"
 
 # 类别映射（根据 VisDrone 的类别定义）
 categories = [
