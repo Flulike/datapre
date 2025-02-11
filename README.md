@@ -45,34 +45,39 @@ python direct_trans/voc2yolo.py
 ### 2. CSV Intermediate Conversion
 Convert your data to CSV first, then transform it to the desired format:
 ```bash
-python with_csv/convert_to_csv.py --input path/to/source --output path/to/intermediate.csv
-python with_csv/convert_from_csv.py --input path/to/intermediate.csv --output path/to/target
+python with_csv/yolo2csv.py
+python with_csv/csv2coco.py 
 ```
 
 ### 3. Dataset Splitting
 Automatically split your dataset into training, validation, and testing sets:
 ```bash
-python split/split_data.py --input path/to/dataset --train_ratio 0.7 --val_ratio 0.2 --test_ratio 0.1
+python split/data_distrubu_withjson.py
 ```
 
 ### 4. Data Cleaning
 Clean your dataset by removing invalid or noisy entries:
 ```bash
-python clear/clean_data.py --input path/to/raw --output path/to/cleaned
+python clear/cleardata.py
 ```
 
 ### 5. Special Dataset Conversions
 
-- **VisDrone Dataset:**  
+- **VisDrone Dataset:**
+  Considering VisDrone dataset has its own format, we use the method below to get the coco format dataset.
   Convert the VisDrone dataset into your desired format:
   ```bash
-  python VisDrone/convert_visdrone.py --input path/to/VisDrone --output path/to/converted
+  python VisDrone/vis2coco.py
   ```
 
-- **UVADT Dataset:**  
+- **UVADT Dataset:**
+  UVADT dataset is mainly used for tracking, so if you want to train it for detection, we recommnd to do the following.
   Process and convert the UVADT dataset:
   ```bash
-  python UVADT/convert_uvadt.py --input path/to/UVADT --output path/to/converted
+  # put all images into 1 directory
+  python UVADT/imagescopy2onedir.py
+  # converet to the coco
+  python UVADT/txt2json.py
   ```
 
 ## Contributing
