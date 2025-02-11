@@ -33,17 +33,13 @@
    cd datapre
    ```
 
-2. Install any dependencies (if available):
-   ```bash
-   pip install -r requirements.txt
-   ```
 
 ## Usage Examples
 
 ### 1. Direct Format Conversion
 Convert your dataset directly using the scripts in the `direct_trans` directory:
 ```bash
-python direct_trans/convert.py --input path/to/source --output path/to/target
+python direct_trans/voc2yolo.py
 ```
 
 ### 2. CSV Intermediate Conversion
